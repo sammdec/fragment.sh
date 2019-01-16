@@ -1,28 +1,37 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import "styled-components/macro"
+import { NavProvider, NavContent } from "react-navi"
+import { ThemeProvider, createGlobalStyle } from "styled-components"
+import { Box } from "rebass"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+import theme from "./theme"
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${theme.colors.white};
+    color: ${theme.colors.black};
+    margin: 0;
+    font-family: ${theme.fonts.sans};
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
-}
+`
 
-export default App;
+const App = ({ navigation }) => (
+  <NavProvider navigation={navigation}>
+    <ThemeProvider theme={theme}>
+      <Box mx="auto" px={4} css={{ maxWidth: "1024px" }}>
+        <GlobalStyle />
+        <Header />
+        <Box pb={4}>
+          <NavContent />
+        </Box>
+        <Footer />
+      </Box>
+    </ThemeProvider>
+  </NavProvider>
+)
+
+export default App
