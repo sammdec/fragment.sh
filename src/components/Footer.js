@@ -9,12 +9,12 @@ export default () => (
     css={p => ({ borderTop: "1px solid", borderColor: p.theme.colors.gray[1] })}
   >
     <NavLink
-      css={p => ({ marginRight: p.theme.space[3] })}
+      css={p => ({ marginRight: p.theme.space[4] })}
       href="https://github.com/samjbmason/fragments"
     >
-      github
+      GitHub
     </NavLink>
 
-    <NavLink href="/api">api</NavLink>
+    <NavLink href="/api">API</NavLink>
   </Box>
 )

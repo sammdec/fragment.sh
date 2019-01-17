@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
 const App = ({ navigation }) => (
   <NavProvider navigation={navigation}>
     <ThemeProvider theme={theme}>
-      <Box mx="auto" px={4} css={{ maxWidth: "1024px" }}>
+      <Box mx="auto" px={[3, 4]} css={{ maxWidth: "1024px" }}>
         <GlobalStyle />
         <Header />
         <Box pb={4}>

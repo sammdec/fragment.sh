@@ -1,7 +1,7 @@
 import React from "react"
 import "styled-components/macro"
 import { getQrBase64 } from "jr-qrcode"
-import { Box, Text, Flex, Button } from "rebass"
+import { Box, Text, Flex, Button, Image } from "rebass"
 import { Textarea } from "./FormElements"
 import ResetButton from "./ResetButton"
 import CopyToClipboard from "./CopyToClipboard"
@@ -17,23 +17,23 @@ const Fragment = ({ fragment, index }) => {
     padding: 4
   })
 
-  console.log(genQr)
-
   return (
     <Box
-      px={3}
+      px={[0, 3]}
       mb={4}
       pb={4}
-      css={p => ({
-        borderBottom: "1px solid",
-        borderColor: p.theme.colors.gray[2]
-      })}
+      css={`
+        border-bottom: 1px solid ${p => p.theme.colors.gray[2]};
+        &:last-child {
+          border-bottom: 0;
+        }
+      `}
     >
       <Text mb={2} fontWeight={700}>
         Fragment #{index + 1}
       </Text>
-      <Flex alignItems="flex-start">
-        <Box width={1} pr={5}>
+      <Flex flexDirection={["column", "row"]} alignItems="flex-start">
+        <Box width={1} pr={[0, 5]} mb={[3, 0]}>
           <Textarea
             rows="3"
             defaultValue={fragment}
@@ -65,7 +65,11 @@ const Fragment = ({ fragment, index }) => {
             />
           </Flex>
         </Box>
-        <img src={genQr} alt="QR code containing fragment text" />
+        <Image
+          width={[1, "auto"]}
+          src={genQr}
+          alt="QR code containing fragment text"
+        />
       </Flex>
 
       <Box css={{ display: "none" }}>

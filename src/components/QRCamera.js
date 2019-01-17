@@ -66,7 +66,7 @@ const QRCamera = ({ onResult, onClose }) => {
           bg="white"
           p={4}
           css={{
-            position: "absolute",
+            position: "fixed",
             left: "50%",
             top: "24px",
             transform: "translateX(-50%)",
@@ -95,13 +95,37 @@ const QRCamera = ({ onResult, onClose }) => {
               Sorry we cant find a camera
             </Text>
           )}
-          {result && (
-            <Text textAlign="center" fontWeight={700} mb={2}>
-              Success! We got it
-            </Text>
-          )}
+
           {!error && (
-            <Box width={400}>
+            <Box
+              width={400}
+              css={`
+                position: relative;
+              `}
+            >
+              <Text
+                result={result}
+                bg="rgba(0,0,255,0.7)"
+                textAlign="center"
+                fontWeight={400}
+                fontSize={4}
+                color="white"
+                py={3}
+                px={4}
+                css={`
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  border-radius: 5px;
+                  white-space: nowrap;
+                  opacity: ${p => (p.result ? 1 : 0)};
+                  transition: opacity 0.3s ease;
+                `}
+              >
+                Success!
+              </Text>
+
               <Video id="video" />
             </Box>
           )}

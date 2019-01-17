@@ -13,7 +13,7 @@ const Reveal = () => {
 
   return (
     <Box>
-      <Heading fontSize={6} mb={2} css={{ maxWidth: "30em" }}>
+      <Heading fontSize={[5, 6]} mb={2} css={{ maxWidth: "30em" }}>
         Add your fragments to reveal your secret
       </Heading>
       <Text lineHeight={1.4} fontSize={4} css={{ maxWidth: "30em" }}>

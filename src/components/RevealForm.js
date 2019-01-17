@@ -42,16 +42,16 @@ const FragmentField = ({
       <Text fontWeight={700} color="gray.3" mb={1}>
         Fragment #{i + 1}
       </Text>
-      <Flex mb={3}>
-        <Box width={3 / 4} pr={4}>
+      <Flex flexDirection={["column", "row"]} mb={3}>
+        <Box width={[1, 3 / 4]} pr={[0, 4]} mb={[3, 0]}>
           <AutoTextarea
-            minRows={2}
             value={value}
             name={name}
             onChange={onChange}
+            css={{ minHeight: "60px" }}
           />
         </Box>
-        <Box width={1 / 4}>
+        <Box width={[1, 1 / 4]}>
           <QRUpload onChange={handleQrUpload} />
           <Button
             type="button"
@@ -132,27 +132,31 @@ const RevealForm = ({
               </Box>
             ))}
 
-            <Button
-              mr={3}
-              type="submit"
-              border="3px solid"
-              borderColor="blue"
-              css={{ cursor: "pointer" }}
-            >
-              Reveal secret
-            </Button>
-            <Button
-              type="button"
-              border="3px solid"
-              borderColor="blue"
-              bg="white"
-              color="blue"
-              fontWeight={400}
-              css={{ cursor: "pointer" }}
-              onClick={() => arrayHelpers.push("")}
-            >
-              Add new fragment
-            </Button>
+            <Flex>
+              <Button
+                flex={["1 0 auto", "0 1 auto"]}
+                mr={3}
+                type="submit"
+                border="3px solid"
+                borderColor="blue"
+                css={{ cursor: "pointer" }}
+              >
+                Reveal secret
+              </Button>
+              <Button
+                type="button"
+                flex={["1 0 auto", "0 1 auto"]}
+                border="3px solid"
+                borderColor="blue"
+                bg="white"
+                color="blue"
+                fontWeight={400}
+                css={{ cursor: "pointer" }}
+                onClick={() => arrayHelpers.push("")}
+              >
+                Add new fragment
+              </Button>
+            </Flex>
           </>
         )}
       />
