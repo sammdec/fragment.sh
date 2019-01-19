@@ -106,6 +106,7 @@ const CreateForm = ({
           <Input
             disabled={formDisabled}
             name="fragments"
+            id="fragments"
             type="number"
             min={2}
             max={10}
@@ -128,6 +129,7 @@ const CreateForm = ({
           <Input
             disabled={formDisabled}
             name="threshold"
+            id="threshold"
             type="number"
             min={1}
             max={10}

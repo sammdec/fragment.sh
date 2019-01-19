@@ -1,6 +1,19 @@
 {
   "name": "fragment.sh",
-  "version": "2",
+  "version": 2,
   "alias": ["fragment.sh", "www.fragment.sh"],
-  "github": { "enabled": true, "autoAlias": true }
+  "github": { "enabled": true, "autoAlias": true },
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "build" }
+    }
+  ],
+  "routes": [
+    { "src": "^/static/(.*)", "dest": "/static/$1" },
+    { "src": "^/favicon.ico", "dest": "/favicon.ico" },
+    { "src": "^/manifest.json", "dest": "/manifest.json" },
+    { "src": "^/(.*)", "dest": "/index.html" }
+  ]
 }

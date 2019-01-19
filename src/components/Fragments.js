@@ -37,6 +37,7 @@ const Fragment = ({ fragment, index }) => {
           <Textarea
             rows="3"
             defaultValue={fragment}
+            aria-label="Fragment content"
             css={p => ({
               marginBottom: p.theme.space[3],
               fontSize: p.theme.fontSizes[1],

@@ -7,11 +7,9 @@ import CreateForm from "../components/CreateForm"
 import Fragments from "../components/Fragments"
 import NavLink from "../components/NavLink"
 
-const testFrags = ["Hello", "Test", "Test 3", "Test 4"]
-
 const Home = () => {
   const isOnline = useOnlineStatus()
-  const [fragments, setFragments] = useState([...testFrags])
+  const [fragments, setFragments] = useState([])
 
   const handleSubmit = values => {
     const fragments = share(values.secret, values.fragments, values.threshold)
