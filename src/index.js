@@ -32,12 +32,10 @@ app({
       onUpdate: () => {
         const event = new Event("sw-update")
         window.dispatchEvent(event)
-        console.log("updated")
       },
       onSuccess: () => {
         const event = new Event("sw-install")
         window.dispatchEvent(event)
-        console.log("installed")
       }
     })
   }
