@@ -13,7 +13,15 @@
   "routes": [
     { "src": "^/static/(.*)", "dest": "/static/$1" },
     { "src": "^/favicon.ico", "dest": "/favicon.ico" },
+    { "src": "^/icons-512.png", "dest": "/icons-512.png" },
+    { "src": "^/robots.txt", "dest": "/robots.txt" },
     { "src": "^/manifest.json", "dest": "/manifest.json" },
+    { "src": "^/precache-manifest.(.*)", "dest": "/precache-manifest.$1" },
+    {
+      "src": "^/service-worker.js",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/service-worker.js"
+    },
     { "src": "^/(.*)", "dest": "/index.html" }
   ]
 }
