@@ -5,23 +5,23 @@
   "github": { "enabled": true, "autoAlias": true },
   "builds": [
     {
-      "src": "package.json",
+      "src": "/www/package.json",
       "use": "@now/static-build",
       "config": { "distDir": "build" }
     }
   ],
   "routes": [
-    { "src": "^/static/(.*)", "dest": "/static/$1" },
-    { "src": "^/favicon.ico", "dest": "/favicon.ico" },
-    { "src": "^/icons-512.png", "dest": "/icons-512.png" },
-    { "src": "^/robots.txt", "dest": "/robots.txt" },
-    { "src": "^/manifest.json", "dest": "/manifest.json" },
-    { "src": "^/precache-manifest.(.*)", "dest": "/precache-manifest.$1" },
+    { "src": "^/static/(.*)", "dest": "/www/static/$1" },
+    { "src": "^/favicon.ico", "dest": "/www/favicon.ico" },
+    { "src": "^/icons-512.png", "dest": "/www/icons-512.png" },
+    { "src": "^/robots.txt", "dest": "/www/robots.txt" },
+    { "src": "^/manifest.json", "dest": "/www/manifest.json" },
+    { "src": "^/precache-manifest.(.*)", "dest": "/www/precache-manifest.$1" },
     {
       "src": "^/service-worker.js",
       "headers": { "cache-control": "s-maxage=0" },
-      "dest": "/service-worker.js"
+      "dest": "/www/service-worker.js"
     },
-    { "src": "^/(.*)", "dest": "/index.html" }
+    { "src": "^/(.*)", "dest": "/www/index.html" }
   ]
 }
