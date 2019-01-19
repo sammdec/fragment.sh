@@ -11,7 +11,7 @@ export default {
     white: "#fff",
     blue: "#00f",
     lightBlue: "#8080ff",
-    purple: ["#b48eff", "#9072cc", "#4e3e6f"],
+    red: "#ff4141",
     gray: ["#fafafa", "#f0f0f0", "#e1e1e1", "#8d8ca0"]
   },
   fontSizes: [12, 14, 16, 18, 24, 32, 48, 64, 72],

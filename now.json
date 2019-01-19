@@ -1,0 +1,6 @@
+{
+  "name": "fragment.sh",
+  "version": "2",
+  "alias": ["fragment.sh", "www.fragment.sh"],
+  "github": { "enabled": true, "autoAlias": true }
+}

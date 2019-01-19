@@ -27,12 +27,18 @@ app({
 
     // Start react.
     renderer(<App navigation={navigation} />, document.getElementById("root"))
-  }
-})
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.register(data => {
-  console.log(data)
+    serviceWorker.register({
+      onUpdate: () => {
+        const event = new Event("sw-update")
+        window.dispatchEvent(event)
+        console.log("updated")
+      },
+      onSuccess: () => {
+        const event = new Event("sw-install")
+        window.dispatchEvent(event)
+        console.log("installed")
+      }
+    })
+  }
 })

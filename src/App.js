@@ -5,6 +5,7 @@ import { ThemeProvider, createGlobalStyle } from "styled-components"
 import { Box } from "rebass"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import SwNotifications from "./components/SwNotifications"
 
 import theme from "./theme"
 
@@ -24,6 +25,7 @@ const App = ({ navigation }) => (
     <ThemeProvider theme={theme}>
       <Box mx="auto" px={[3, 4]} css={{ maxWidth: "1024px" }}>
         <GlobalStyle />
+        <SwNotifications />
         <Header />
         <Box pb={4}>
           <NavContent />

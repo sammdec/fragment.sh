@@ -4,12 +4,23 @@ import { Button, Box, Text, Flex } from "rebass"
 import { withFormik, FieldArray } from "formik"
 import { AutoTextarea } from "./FormElements"
 import get from "lodash/get"
+import { combine } from "../utils/secrets"
 import QRUpload from "./QRUpload"
 import QRCamera from "./QRCamera"
 
 const config = {
   mapPropsToValues: () => ({ fragments: [""] }),
-  handleSubmit: () => {}
+  handleSubmit: ({ fragments }, { props, setStatus }) => {
+    try {
+      const secret = combine(fragments)
+      props.onSubmit(secret)
+    } catch (error) {
+      setStatus({
+        message:
+          "A invalid fragment was given, check your fragments and try again"
+      })
+    }
+  }
 }
 
 const FragmentField = ({
@@ -95,12 +106,14 @@ const RevealForm = ({
   handleChange,
   values,
   errors,
+  status,
   setFieldValue,
   setFieldError
 }) => {
   const hasMultipleRows = values.fragments.length > 1
   return (
     <form onSubmit={handleSubmit}>
+      {status && <Text>{status.message}</Text>}
       <FieldArray
         name="fragments"
         render={arrayHelpers => (
