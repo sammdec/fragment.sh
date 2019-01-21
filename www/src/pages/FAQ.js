@@ -1,5 +1,6 @@
 import React from "react"
 import { Box, Text, Heading, Link } from "rebass"
+import NavLink from "../components/NavLink"
 
 const FAQ = () => (
   <Box>
@@ -47,6 +48,18 @@ const FAQ = () => (
       runs as a progressive web app and by default we even recommend disabling
       internet access to use the tool just in case anything bad on your computer
       tries to transmit data back to a server somewhere.
+    </Text>
+
+    <Heading mt={4} mb={3}>
+      But how can I be sure?
+    </Heading>
+    <Text>
+      That's a fair point especially in these times it's best to be vigilant but
+      you can check out the source code for both the site and the api on{" "}
+      <NavLink href="https://github.com/samjbmason/fragment.sh">
+        Github{" "}
+      </NavLink>
+      .
     </Text>
   </Box>
 )

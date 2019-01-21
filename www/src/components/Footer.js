@@ -10,7 +10,7 @@ export default () => (
   >
     <NavLink
       css={p => ({ marginRight: p.theme.space[4] })}
-      href="https://github.com/samjbmason/fragments"
+      href="https://github.com/samjbmason/fragment.sh"
     >
       GitHub
     </NavLink>
