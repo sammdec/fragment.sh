@@ -14,6 +14,7 @@ const Home = () => {
   const handleSubmit = values => {
     const fragments = share(values.secret, values.fragments, values.threshold)
     setFragments(fragments)
+    window.scrollTo(0, 0)
   }
 
   const hasFragments = fragments.length > 0
