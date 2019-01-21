@@ -1,6 +1,5 @@
 import React from "react"
 import { Box, Text, Heading, Link } from "rebass"
-import NavLink from "../components/NavLink"
 
 const FAQ = () => (
   <Box>
@@ -56,10 +55,7 @@ const FAQ = () => (
     <Text>
       That's a fair point especially in these times it's best to be vigilant but
       you can check out the source code for both the site and the api on{" "}
-      <NavLink href="https://github.com/samjbmason/fragment.sh">
-        Github{" "}
-      </NavLink>
-      .
+      <Link href="https://github.com/samjbmason/fragment.sh">Github </Link>.
     </Text>
   </Box>
 )
