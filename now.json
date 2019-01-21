@@ -8,9 +8,20 @@
       "src": "/www/package.json",
       "use": "@now/static-build",
       "config": { "distDir": "build" }
-    }
+    },
+    { "src": "/api/endpoints/*.js", "use": "@now/node" }
   ],
   "routes": [
+    {
+      "src": "^/api/(.*)",
+      "methods": ["POST", "OPTIONS"],
+      "dest": "/api/endpoints/$1.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+        "Access-Control-Allow-Credentials": "true"
+      }
+    },
     { "src": "^/static/(.*)", "dest": "/www/static/$1" },
     { "src": "^/favicon.ico", "dest": "/www/favicon.ico" },
     { "src": "^/icons-512.png", "dest": "/www/icons-512.png" },

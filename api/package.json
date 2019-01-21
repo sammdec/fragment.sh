@@ -4,7 +4,15 @@
   "description": "An open sourced api to generate fragments to to reveal a secret",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "dev": "now-lambda --config ../now.json --port 1234"
+  },
   "dependencies": {
-    "micro": "^9.3.3"
+    "hash.js": "^1.1.7",
+    "micro": "^9.3.3",
+    "secrets.js-grempe": "^1.1.0"
+  },
+  "devDependencies": {
+    "now-lambda-runner": "^3.0.0"
   }
 }
