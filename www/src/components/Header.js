@@ -50,7 +50,8 @@ export default () => (
           padding: ${p => p.theme.space[2]}px ${p => p.theme.space[3]}px;
           width: 100%;
 
-          &.active {
+          &.active,
+          &:hover {
             color: ${p => p.theme.colors.white};
           }
 
