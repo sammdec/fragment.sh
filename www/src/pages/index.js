@@ -3,14 +3,13 @@ import { createPage, createSwitch } from "navi"
 import Home from "./Home"
 import Reveal from "./Reveal"
 import FAQ from "./FAQ"
-import API from "./API"
+import Api from "./Api"
 
 export default createSwitch({
   paths: {
     "/": createPage({
       getContent: () => <Home />
     }),
-
     "/reveal": createPage({
       getContent: () => <Reveal />
     }),
@@ -18,7 +17,7 @@ export default createSwitch({
       getContent: () => <FAQ />
     }),
     "/api": createPage({
-      getContent: () => <API />
+      getContent: () => <Api />
     })
   }
 })

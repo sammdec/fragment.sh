@@ -17,7 +17,7 @@ const config = {
     } catch (error) {
       setStatus({
         message:
-          "A invalid fragment was given, check your fragments and try again"
+          "You have not provided enough fragments or one of the fragments could be incorrect."
       })
     }
   }
@@ -107,13 +107,23 @@ const RevealForm = ({
   values,
   errors,
   status,
+  setStatus,
   setFieldValue,
   setFieldError
 }) => {
   const hasMultipleRows = values.fragments.length > 1
+  const handleAddNewRow = arrayHelpers => () => {
+    arrayHelpers.push("")
+    setStatus("")
+  }
+
   return (
     <form onSubmit={handleSubmit}>
-      {status && <Text>{status.message}</Text>}
+      {status && (
+        <Text color="red" mb={2}>
+          {status.message}
+        </Text>
+      )}
       <FieldArray
         name="fragments"
         render={arrayHelpers => (
@@ -165,7 +175,7 @@ const RevealForm = ({
                 color="blue"
                 fontWeight={400}
                 css={{ cursor: "pointer" }}
-                onClick={() => arrayHelpers.push("")}
+                onClick={handleAddNewRow(arrayHelpers)}
               >
                 Add new fragment
               </Button>

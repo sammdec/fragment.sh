@@ -45,11 +45,13 @@ const Fragment = ({ fragment, index }) => {
               resize: "none"
             })}
           />
-          <Flex>
+          <Flex flexDirection={["column", "row"]}>
             <CopyToClipboard text={fragment} />
             <Button
               as="a"
               mr={2}
+              mb={[2, 0]}
+              width={[1, "auto"]}
               download={`fragment${index + 1}QR.png`}
               href={genQr}
               css={{ cursor: "pointer" }}
@@ -58,7 +60,7 @@ const Fragment = ({ fragment, index }) => {
             </Button>
             <ReactToPrint
               trigger={() => (
-                <Button css={{ cursor: "pointer" }}>
+                <Button width={[1, "auto"]} css={{ cursor: "pointer" }}>
                   Print paper fragment
                 </Button>
               )}

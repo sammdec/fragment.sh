@@ -54,12 +54,8 @@ const Reveal = () => {
       </Text>
 
       <Box mt={4} mb={5}>
-        <Text fontSize={4} fontWeight={700}>
+        <Text fontSize={4} fontWeight={700} mb={1}>
           Your secret
-        </Text>
-        <Text fontSize={2} mb={3}>
-          If it looks like like garbled text this means you haven't provided
-          enough fragments
         </Text>
         <Card
           border="2px dashed"

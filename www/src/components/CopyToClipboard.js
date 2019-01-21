@@ -9,7 +9,12 @@ export default ({ text }) => {
   return (
     <Box css={{ position: "relative" }}>
       <CopyToClipboard text={text} onCopy={() => setCopied(true)}>
-        <Button mr={2} css={{ cursor: "pointer" }}>
+        <Button
+          width={[1, "auto"]}
+          mr={2}
+          mb={[2, 0]}
+          css={{ cursor: "pointer" }}
+        >
           Copy to clipboard
         </Button>
       </CopyToClipboard>

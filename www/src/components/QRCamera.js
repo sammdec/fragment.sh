@@ -34,7 +34,7 @@ const Video = styled.video`
 
 const QRCamera = ({ onResult, onClose }) => {
   const [error, setError] = useState(false)
-  const [result, setResult] = useState(false)
+  const [result, setResult] = useState(null)
   useEffect(() => {
     getCodeFromVideo(handleVideoResult)
   }, [])
@@ -65,13 +65,13 @@ const QRCamera = ({ onResult, onClose }) => {
         <Box
           bg="white"
           p={4}
+          width={[1, 400]}
           css={{
             position: "fixed",
             left: "50%",
             top: "24px",
             transform: "translateX(-50%)",
-            borderRadius: "5px",
-            minWidth: "400px"
+            borderRadius: "5px"
           }}
         >
           <Button
@@ -98,13 +98,12 @@ const QRCamera = ({ onResult, onClose }) => {
 
           {!error && (
             <Box
-              width={400}
               css={`
                 position: relative;
               `}
             >
               <Text
-                result={result}
+                result={result ? 1 : 0}
                 bg="rgba(0,0,255,0.7)"
                 textAlign="center"
                 fontWeight={400}
@@ -119,7 +118,7 @@ const QRCamera = ({ onResult, onClose }) => {
                   transform: translate(-50%, -50%);
                   border-radius: 5px;
                   white-space: nowrap;
-                  opacity: ${p => (p.result ? 1 : 0)};
+                  opacity: ${p => p.result};
                   transition: opacity 0.3s ease;
                 `}
               >
