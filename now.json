@@ -14,6 +14,8 @@
     { "src": "^/static/(.*)", "dest": "/www/static/$1" },
     { "src": "^/favicon.ico", "dest": "/www/favicon.ico" },
     { "src": "^/icons-512.png", "dest": "/www/icons-512.png" },
+    { "src": "^/touch-icon-180.png", "dest": "/www/touch-icon-180.png" },
+    { "src": "^/touch-icon-120.png", "dest": "/www/touch-icon-120.png" },
     { "src": "^/robots.txt", "dest": "/www/robots.txt" },
     { "src": "^/manifest.json", "dest": "/www/manifest.json" },
     { "src": "^/precache-manifest.(.*)", "dest": "/www/precache-manifest.$1" },
