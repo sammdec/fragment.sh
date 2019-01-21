@@ -1,0 +1,7 @@
+{
+  "name": "fragment.sh-api",
+  "version": "1.0.0",
+  "description": "An open sourced api to generate fragments to to reveal a secret",
+  "main": "index.js",
+  "license": "MIT"
+}
