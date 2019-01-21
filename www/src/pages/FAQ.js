@@ -28,11 +28,11 @@ const FAQ = () => (
       <Link href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing">
         Shamir's Secret Sharing
       </Link>{" "}
-      to encrypt your secret and break it into any number of frgaments.
+      to encrypt your secret and break it into any number of fragments.
     </Text>
     <Text mb={2}>
-      Not one fragment holds the entire secret and a minimum number of fragments
-      of your choosing is required to reveal the secret.
+      Each fragment holds part of the secret but a minimum number of fragments
+      of your choosing is required to reveal the whole secret.
     </Text>
     <Text mb={2}>
       A secret can only be revealed after a minimum number of pieces are
