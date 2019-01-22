@@ -14,7 +14,16 @@
   "routes": [
     {
       "src": "^/api/(.*)",
-      "methods": ["POST", "OPTIONS"],
+      "methods": ["OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+        "Access-Control-Allow-Credentials": "true"
+      }
+    },
+    {
+      "src": "^/api/(.*)",
+      "methods": ["POST"],
       "dest": "/api/endpoints/$1.js",
       "headers": {
         "Access-Control-Allow-Origin": "*",
